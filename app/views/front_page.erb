@@ -1,0 +1,17 @@
+Choose which deck you want to play.
+
+<% @all_deck.each do |x| %> 
+<ul>
+	<li><%= x.id%></li><li><%= x.title %></li>
+</ul>
+<% end %>
+
+<form action = 'front_page' method = 'post'>
+Input deck number here: <input type ='text' name='choice'> 
+<input type='submit' value='Enter'>
+</form>
+
+<form action ='logout' method ='post'> 
+	<input type='submit' value='Logout'>
+</form>
+

@@ -1,0 +1,14 @@
+<h1>Game Spot</h1>
+
+<p><%= @deck_title %> </p>
+
+<p><%= @question %> </p>
+
+Insert answer here
+<form action'/game' method ='post'>
+<input type ='text' name='answer'> 	
+<input type='submit' value='Enter'>
+</form>
+
+
+<%= session[:counter_questions] %>
