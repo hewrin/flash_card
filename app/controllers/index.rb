@@ -39,6 +39,11 @@ post '/logout' do
 	redirect to '/'
 end
 
+get '/lifetime_results/:u_id' do
+	@user = User.find params[:u_id]
+	@round = Round.where(user_id: params[:u_id])
+	erb :lifetimeresults
+end
 
 		
 	

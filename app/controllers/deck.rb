@@ -42,6 +42,7 @@ post "/game/rounds/:r_id/deck/:d_id/cards/:c_id/answer" do
 end
 
 get "/game/rounds/:r_id/deck/:d_id/results" do
+	@user = User.find_by(name: session[:name])
 	@this_round = Round.find params[:r_id]
 	erb :result
 end

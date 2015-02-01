@@ -1,0 +1,12 @@
+<h1>Hello <%= @user.name %>
+
+<p> These are your previous rounds </p>
+
+<% @round.each do |x| %>
+
+<li><%= x.deck_used %></li>
+<li><%= x.no_of_correct %> correct</li>
+<li><%= x.no_of_incorrect %> wrong</li>
+
+<% end %>
+
