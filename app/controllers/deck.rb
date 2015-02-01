@@ -10,10 +10,10 @@ get '/game/rounds/:r_id/deck/:d_id' do
 	 q_counter = @this_round.no_of_guess
 	 q_counter += 1
 	 @this_round.update(deck_used: @deck.title, no_of_guess: q_counter)
-	 if q_counter == 5
+	 if q_counter > 5
 	 	redirect to "/game/rounds/#{@this_round.id}/deck/#{@deck.id}/results"
 	 else   	 
-	 	
+
 	 	@card = @deck.cards.all
 	 	random = (Random.new.rand(@card.first.id..@card.last.id))
 	 	@new_card = @deck.cards.all.find random
