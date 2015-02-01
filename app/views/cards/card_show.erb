@@ -1,17 +1,21 @@
 <h1>Game Spot</h1>
 
 <p><%= @deck_title %> </p>
-
-<p><%= @question %> </p>
+<p>This is question number <%= @this_round.no_of_guess %>
+<p> <%= @card.question %> </p>
 
 Insert answer here
-<form action'/game' method ='post'>
+<form action = "/game/rounds/<%= @this_round.id %>/deck/<%=@deck.id%>/cards/<%=@card.id%>/answer" method ='post'>
 <input type ='text' name='answer'> 	
 <input type='submit' value='Enter'>
 </form>
 <br>
+
+
 <form action ='logout' method ='post'> 
 	<input type='submit' value='Logout'>
 </form>
 
-<%= session[:counter_questions] %>
+
+
+

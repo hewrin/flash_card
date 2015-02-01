@@ -1,17 +1,17 @@
-Choose which deck you want to play.
+<h1>Welcome <%= @user.name %>!</h1>
+
+<h2>Choose which deck you want to play.</h2>
 
 <% @all_deck.each do |x| %> 
 <ul>
-	<li><%= x.id%></li><li><%= x.title %></li>
+	<li><a href = "game/rounds/<%= @this_round.id %>/deck/<%= x.id%>"><%= x.title %></a></li>
 </ul>
 <% end %>
 
-<form action = 'front_page' method = 'post'>
+<!-- <form action = 'front_page' method = 'post'>
 Input deck number here: <input type ='text' name='choice'> 
 <input type='submit' value='Enter'>
-</form>
+</form> -->
 
-<form action ='logout' method ='post'> 
-	<input type='submit' value='Logout'>
-</form>
+
 
